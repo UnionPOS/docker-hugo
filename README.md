@@ -17,7 +17,6 @@ Dockerfile for Hugo
 
 ## Quick Start
 
-## Quick Start
 
 Here's how to get started...
 
