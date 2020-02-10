@@ -13,12 +13,16 @@ build: docker/build
 docs: readme/deps readme
 .PHONY: docs
 
+push:
+	$(DOCKER) push $(DOCKER_IMAGE_NAME)
+.PHONY: push
+
 run:
-	docker container run --rm \
+	$(DOCKER) container run --rm \
 		--publish "1313:1313" \
 		--attach STDOUT ${DOCKER_IMAGE_NAME}
 
 it:
-	docker run -it \
+	$(DOCKER) run -it \
 		--publish "1313:1313" \
 		${DOCKER_IMAGE_NAME} /bin/bash
